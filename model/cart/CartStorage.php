@@ -4,6 +4,8 @@ class CartStorage {
 		//serialize: chuyền object to string
 		$_SESSION["cart"] = serialize($cart);
 		setcookie("cart", serialize($cart),  time()+24*60*60);//keep one day
+		
+	
 	}
 
 	function fetch() {
@@ -12,11 +14,14 @@ class CartStorage {
 				$cart = new Cart();
 				return $cart;
 			}
+			
 			//update session;
 			$_SESSION["cart"] = $_COOKIE["cart"];
+			
 		}
 		//serialize: chuyền stirng to object
 		$cart = unserialize($_SESSION["cart"]);
+		
 		return $cart;
 	}
 

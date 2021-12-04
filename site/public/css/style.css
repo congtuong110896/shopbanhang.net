@@ -401,7 +401,7 @@ main .row .button-product-action .icon:hover {
 .product-name {
   color: #252525;
   width: 100%;
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
   overflow: hidden;
   text-overflow: ellipsis;/* thêm 3 dấu chấm ở cuối*/
   -webkit-line-clamp: 2; /* số dòng muốn hiển thị*/

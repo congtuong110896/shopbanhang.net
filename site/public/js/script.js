@@ -174,12 +174,13 @@ $(function () {
   });
   // Thêm sản phẩm vào giỏ hàng
   $("main .buy").click(function (event) {
+    var qty = $(this).prev("input").val();
     var product_id = $(this).attr("product-id");
     
     $.ajax({
       url: "index.php?c=cart&a=add",
       type: "GET",
-      data: { product_id: product_id, qty: 1 },
+      data: { product_id: product_id, qty: qty },
     }).done(function (data) {
       // console.log(data);
       displayCart(data);
@@ -439,7 +440,7 @@ $(function () {
       600: {
         items: 4,
       },
-      1000: {
+      1050: {
         items: 5,
       },
     },

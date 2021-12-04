@@ -22,11 +22,11 @@
                         <div class="footerLink">
                             <h4>Liên kết </h4>
                             <ul class="list-unstyled">
-                                <li><a href="san-pham.html">Sản phẩm </a></li>
-                                <li><a href="chinh-sach-doi-tra.html">Chính sách đổi trả</a></li>
-                                <li><a href="chinh-sach-thanh-toan.html">Chính sách thanh toán</a></li>
-                                <li><a href="chinh-sach-giao-hang.html">Chính sách giao hàng </a></li>
-                                <li><a href="lien-he.html">Liên hệ </a></li>
+                                <li><a href="?c=product">Sản phẩm </a></li>
+                                <li><a href="?c=information&a=returnPolicy">Chính sách đổi trả</a></li>
+                                <li><a href="?c=information&a=paymentPolicy">Chính sách thanh toán</a></li>
+                                <li><a href="?c=information&a=deliveriedPolicy">Chính sách giao hàng </a></li>
+                                <li><a href="?c=contact&a=form">Liên hệ </a></li>
                             </ul>
                         </div>
                     </div>
@@ -70,6 +70,7 @@
 <!-- END FOOTER -->
 <!-- BACK TO TOP -->
 <div class="back-to-top hidden-xs hidden-sm" class="bg-color">▲</div>
+<!-- END BACK TO TOP -->
 <div class="zalo-vr hotline-phone-ring-wrap">
     <div class="hotline-phone-ring">
         <div class="hotline-phone-ring-circle"></div>
@@ -106,7 +107,6 @@
     </div>
 
 </div>
-<!-- END BACK TO TOP -->
 <!-- REGISTER DIALOG -->
 
 <div class="modal fade " id="modal-register" role="lg">
@@ -296,31 +296,33 @@
     </div>
 </div>
 <!-- END CART DIALOG -->
-<!-- Facebook Messenger Chat -->
-<!-- Load Facebook SDK for JavaScript -->
+<!-- Messenger Plugin chat Code -->
 <div id="fb-root"></div>
-<script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            xfbml: true,
-            version: 'v4.0'
-        });
-    };
 
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-<!-- Your customer chat code -->
-<div class="fb-customerchat" attribution=setup_tool page_id="112296576811987" logged_in_greeting="Chào bạn, bạn muốn mua sản phẩm nào bên PandaShop.com" logged_out_greeting="Chào bạn, bạn muốn mua sản phẩm nào bên GodaShop.com">
+<!-- Your Plugin chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
 </div>
-<!-- End Facebook Messenger Chat -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "103675848823553");
+  chatbox.setAttribute("attribution", "biz_inbox");
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v12.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
 </body>
 
